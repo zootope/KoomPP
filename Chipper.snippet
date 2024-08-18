@@ -2,10 +2,10 @@
 #!desc=1.邮箱过人脸 2.USDT入金 3.跳过Pin 4.禁止更新 By @niuniujunGroup
 #!category=Chipper
 
-[MITM]
+#[MITM]
 hostname = %APPEND% api.chippercash.com, compliance.chippercash.com, auth.chippercash.com
 
-[Rewrite Local]
+#[Rewrite Local]
 # 强制跳过 Pin
 https://auth.chippercash.com/pin/validate url script-response-body https://raw.githubusercontent.com/niuniujun-argun/Scripy/main/Chipper/Javascript/skipPin.js
 # 禁止强制更新
