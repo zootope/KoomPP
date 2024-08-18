@@ -3,14 +3,5 @@
 #!category=Chipper
 
 #[MITM]
-hostname = %APPEND% api.chippercash.com, compliance.chippercash.com, auth.chippercash.com
+hostname = api.chippercash.com, compliance.chippercash.com, auth.chippercash.com
 
-#[Rewrite_Local]
-# 强制跳过 Pin
-https://auth.chippercash.com/pin/validate url script-response-body https://raw.githubusercontent.com/niuniujun-argun/Scripy/main/Chipper/Javascript/skipPin.js
-# 禁止强制更新
-https://api.chippercash.com/v1/health/appversion url script-response-body https://raw.githubusercontent.com/niuniujun-argun/Scripy/main/Chipper/Javascript/skipUpdate.js
-# 展示入金界面
-https://api.chippercash.com/v1/users/accounts/configuration url script-response-body https://raw.githubusercontent.com/niuniujun-argun/Scripy/main/Chipper/Javascript/showUSDXDeposits.js
-# 邮箱验证人脸
-https://compliance.chippercash.com/account/configuration url script-response-body https://raw.githubusercontent.com/niuniujun-argun/Scripy/main/Chipper/Javascript/skipFrozen.js
